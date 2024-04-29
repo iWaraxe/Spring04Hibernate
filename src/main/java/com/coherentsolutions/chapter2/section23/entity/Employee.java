@@ -1,4 +1,4 @@
-package com.coherentsolutions.chapter2.section22.entity;
+package com.coherentsolutions.chapter2.section23.entity;
 
 
 import javax.persistence.*;
@@ -18,11 +18,6 @@ public class Employee {
 
     @Column(name = "salary")
     private int salary;
-
-    //@ManyToOne(cascade = CascadeType.ALL)
-    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.DETACH, CascadeType.REFRESH, CascadeType.MERGE})
-    @JoinColumn(name = "department_id") // working with JoinColumn always write name of the foreign key column
-    private Department department;
 
     // Constructors, getters and setters
     public Employee() {}
@@ -65,17 +60,9 @@ public class Employee {
         this.salary = salary;
     }
 
-    public Department getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(Department department) {
-        this.department = department;
-    }
-
     @Override
     public String toString() {
-        return new StringJoiner(", ", com.coherentsolutions.chapter2.section20.entity.Employee.class.getSimpleName() + "[", "]")
+        return new StringJoiner(", ", Employee.class.getSimpleName() + "[", "]")
                 .add("id=" + id)
                 .add("name='" + name + "'")
                 .add("surname='" + surname + "'")

@@ -1,6 +1,6 @@
-package com.coherentsolutions.section10;
+package com.coherentsolutions.chapter1.section10;
 
-import com.coherentsolutions.Employee;
+import com.coherentsolutions.chapter1.entity.Employee;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -17,7 +17,7 @@ public class HqlExample2Delete {
             session.beginTransaction();
 
             session.createQuery("DELETE Employee " +
-                    "where name = 'Igor'").executeUpdate(); // update == changes in table: update column values or deletion of rows
+                    "where name = 'Toya'").executeUpdate(); // update == changes in table: update column values or deletion of rows
 
             session.getTransaction().commit();
             System.out.println("Done!");

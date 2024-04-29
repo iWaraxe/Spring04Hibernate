@@ -1,6 +1,6 @@
-package com.coherentsolutions.section04;
+package com.coherentsolutions.chapter1.section04;
 
-import com.coherentsolutions.Employee;
+import com.coherentsolutions.chapter1.entity.Employee;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;

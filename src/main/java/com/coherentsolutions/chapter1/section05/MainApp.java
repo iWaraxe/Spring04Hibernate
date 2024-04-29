@@ -1,6 +1,6 @@
-package com.coherentsolutions.section05;
+package com.coherentsolutions.chapter1.section05;
 
-import com.coherentsolutions.Employee;
+import com.coherentsolutions.chapter1.entity.Employee;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -10,7 +10,7 @@ public class MainApp {
     public static void main(String[] args) {
         SessionFactory sessionFactory = new Configuration()
                 .configure("hibernate.cfg.xml")
-                .addAnnotatedClass(com.coherentsolutions.Employee.class)
+                .addAnnotatedClass(Employee.class)
                 .buildSessionFactory();
         Session session = sessionFactory.openSession();
         Transaction transaction = null;

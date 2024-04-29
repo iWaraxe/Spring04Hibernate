@@ -1,2 +1,36 @@
-package com.coherentsolutions.chapter2.section21.entity;public class Relatio1OneToOneBiDirectional {
+package com.coherentsolutions.chapter2.section21;
+
+import com.coherentsolutions.chapter2.section21.entity.Detail;
+import com.coherentsolutions.chapter2.section21.entity.Employee;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class Relatio1OneToOneBiDirectional {
+    public static void main(String[] args) {
+        SessionFactory factory = new Configuration()
+                .configure("hibernate.cfg.xml")
+                .addAnnotatedClass(Employee.class)
+                .addAnnotatedClass(Detail.class)
+                .buildSessionFactory();
+
+        Session session = null;
+
+        try {
+            session = factory.getCurrentSession();
+            Employee employee = new Employee("Igor", "Waraxe", "Training Center", 4000);
+            Detail detail = new Detail("Wrocław", "572 110 799", "igorwaraxe@gmail.com");
+
+            detail.setEmployee(employee);
+            session.beginTransaction();
+
+            session.save(detail);
+
+            session.getTransaction().commit();
+            System.out.println("Done!");
+        } finally {
+            session.close();
+            factory.close();
+        }
+    }
 }

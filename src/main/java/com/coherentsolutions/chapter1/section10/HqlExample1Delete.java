@@ -1,6 +1,6 @@
-package com.coherentsolutions.section10;
+package com.coherentsolutions.chapter1.section10;
 
-import com.coherentsolutions.Employee;
+import com.coherentsolutions.chapter1.entity.Employee;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -16,7 +16,7 @@ public class HqlExample1Delete {
             Session session = factory.getCurrentSession();
             session.beginTransaction();
 
-            Employee emp = session.get(Employee.class, 1);
+            Employee emp = session.get(Employee.class, 33);
             session.delete(emp);
 
             session.getTransaction().commit();

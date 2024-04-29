@@ -1,4 +1,4 @@
-package com.coherentsolutions.section03;
+package com.coherentsolutions.chapter1.section03;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

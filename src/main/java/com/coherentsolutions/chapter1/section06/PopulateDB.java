@@ -1,6 +1,6 @@
-package com.coherentsolutions.section06;
+package com.coherentsolutions.chapter1.section06;
 
-import com.coherentsolutions.Employee;
+import com.coherentsolutions.chapter1.entity.Employee;
 import com.github.javafaker.Faker;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -15,7 +15,7 @@ public class PopulateDB {
     public static void main(String[] args) {
         SessionFactory sessionFactory = new Configuration()
                 .configure("hibernate.cfg.xml")
-                .addAnnotatedClass(com.coherentsolutions.Employee.class)
+                .addAnnotatedClass(Employee.class)
                 .buildSessionFactory();
         Session session = sessionFactory.openSession();
 

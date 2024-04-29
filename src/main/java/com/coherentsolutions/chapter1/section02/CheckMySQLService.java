@@ -1,4 +1,4 @@
-package com.coherentsolutions.section02;
+package com.coherentsolutions.chapter1.section02;
 
 import java.io.BufferedReader;
 import java.io.IOException;

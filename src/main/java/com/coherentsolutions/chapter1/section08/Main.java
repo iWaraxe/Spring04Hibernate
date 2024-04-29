@@ -1,10 +1,10 @@
-package com.coherentsolutions.section08;
+package com.coherentsolutions.chapter1.section08;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
-import com.coherentsolutions.Employee;
+import com.coherentsolutions.chapter1.entity.Employee;
 
 public class Main {
     public static void main(String[] args) {

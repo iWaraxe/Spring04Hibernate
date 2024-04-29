@@ -1,4 +1,4 @@
-package com.coherentsolutions;
+package com.coherentsolutions.chapter1.entity;
 
 import javax.persistence.*;
 import java.util.StringJoiner;
@@ -8,6 +8,7 @@ import java.util.StringJoiner;
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private int id;
     @Column(name = "name")
     private String name;

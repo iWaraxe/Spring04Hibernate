@@ -1,4 +1,4 @@
-package com.coherentsolutions.chapter2.section22.entity;
+package com.coherentsolutions.chapter2.section23.entity;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -19,8 +19,8 @@ public class Department {
     @Column(name = "min_salary")
     private int minSalary;
 
-    //@OneToMany(cascade = CascadeType.ALL,
-    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.DETACH, CascadeType.REFRESH, CascadeType.MERGE}, mappedBy = "department")
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "department_id") // column of the target table, most important is to be foreign key!!!
     private List<Employee> employeeList;
 
     public Department() {
@@ -37,7 +37,6 @@ public class Department {
             employeeList = new ArrayList<>();
         }
         employeeList.add(employee);
-        employee.setDepartment(this); // bidirectional link
     }
 
     public int getId() {

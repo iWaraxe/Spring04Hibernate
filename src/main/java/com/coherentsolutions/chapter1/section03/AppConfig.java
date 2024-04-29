@@ -1,4 +1,4 @@
-package com.coherentsolutions.section03;
+package com.coherentsolutions.chapter1.section03;
 
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.beans.factory.annotation.Autowired;

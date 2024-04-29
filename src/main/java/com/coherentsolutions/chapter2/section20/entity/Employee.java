@@ -1,4 +1,4 @@
-package com.coherentsolutions.chapter2.entity;
+package com.coherentsolutions.chapter2.section20.entity;
 
 import javax.persistence.*;
 import java.util.StringJoiner;

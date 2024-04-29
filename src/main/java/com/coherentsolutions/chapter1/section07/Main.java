@@ -1,6 +1,6 @@
-package com.coherentsolutions.section07;
+package com.coherentsolutions.chapter1.section07;
 
-import com.coherentsolutions.Employee;
+import com.coherentsolutions.chapter1.entity.Employee;
 
 public class Main {
     public static void main(String[] args) {

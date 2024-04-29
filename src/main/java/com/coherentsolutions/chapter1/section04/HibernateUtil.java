@@ -1,4 +1,4 @@
-package com.coherentsolutions.section04;
+package com.coherentsolutions.chapter1.section04;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;

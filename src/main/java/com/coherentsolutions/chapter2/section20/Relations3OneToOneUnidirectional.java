@@ -1,12 +1,12 @@
 package com.coherentsolutions.chapter2.section20;
 
-import com.coherentsolutions.chapter2.entity.Detail;
-import com.coherentsolutions.chapter2.entity.Employee;
+import com.coherentsolutions.chapter2.section20.entity.Detail;
+import com.coherentsolutions.chapter2.section20.entity.Employee;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-public class Relations2OneToOneUnidirectional {
+public class Relations3OneToOneUnidirectional {
     public static void main(String[] args) {
         SessionFactory factory = new Configuration()
                 .configure("hibernate.cfg.xml")
@@ -14,19 +14,18 @@ public class Relations2OneToOneUnidirectional {
                 .addAnnotatedClass(Detail.class)
                 .buildSessionFactory();
 
+        Session session = factory.getCurrentSession();
         try {
-            Session session = factory.getCurrentSession();
-
-            Employee employee = new Employee("Oleg", "Hibernatov", "Training Center", 5000);
-            Detail detail = new Detail("Minsk", "375297514533", "oleg@gmail.com");
-            employee.setEmpDetail(detail);
 
             session.beginTransaction();
-            session.save(employee);
-            session.getTransaction().commit();
+            Employee emp = session.get(Employee.class, 66);
 
+            System.out.println(emp.getEmpDetail()); // we don't write SQL but rather use cascade
+
+            session.getTransaction().commit();
             System.out.println("Done!");
         } finally {
+            session.close();
             factory.close();
         }
     }
