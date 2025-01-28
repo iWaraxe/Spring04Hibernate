@@ -17,7 +17,7 @@ public class HqlExample2Update {
             session.beginTransaction();
 
             session.createQuery("update Employee set salary = 10000 " +
-                    "where name = 'Igor'").executeUpdate();
+                    "where name = 'Tony'").executeUpdate();
 
             session.getTransaction().commit();
             System.out.println("Done!");

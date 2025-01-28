@@ -21,7 +21,7 @@ public class Relation2OneToManyUniDirectional {
 
             session.beginTransaction();
 
-            Department department = session.get(Department.class, 3);
+            Department department = session.get(Department.class, 16);
             System.out.println(department);
             System.out.println(department.getEmployeeList());
 

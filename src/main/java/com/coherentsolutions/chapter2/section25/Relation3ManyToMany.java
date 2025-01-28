@@ -19,7 +19,7 @@ public class Relation3ManyToMany {
         try {
             session = factory.getCurrentSession();
             session.beginTransaction();
-            Section section = session.get(Section.class, 1);
+            Section section = session.get(Section.class, 10);
 
             System.out.println(section);
             System.out.println(section.getChildren());

@@ -19,9 +19,8 @@ public class Employee {
     @Column(name = "salary")
     private int salary;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    //@ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.DETACH, CascadeType.REFRESH, CascadeType.MERGE})
-    @JoinColumn(name = "department_id") // working with JoinColumn always write name of the foreign key column
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "departments_id") // working with JoinColumn always write name of the foreign key column
     private Department department;
 
     // Constructors, getters and setters

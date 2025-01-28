@@ -20,7 +20,7 @@ public class HqlExample3Get {
 
             //To remove JPA language checks => settings/inspections/query/JPA/query language checks
             List<Employee> emps = session.createQuery("FROM Employee " +
-                            "WHERE name = 'Igor' AND salary > 5000") // name is not the column name, it's class field name.
+                            "WHERE name = 'Peter' AND salary > 5000") // name is not the column name, it's class field name.
                     .getResultList();
 
             for (Employee e: emps){

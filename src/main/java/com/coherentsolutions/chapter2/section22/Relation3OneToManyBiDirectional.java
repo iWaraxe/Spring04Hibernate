@@ -21,7 +21,7 @@ public class Relation3OneToManyBiDirectional {
 
             session.beginTransaction();
 
-            Employee employee = session.get(Employee.class, 1);
+            Employee employee = session.get(Employee.class, 107);
             System.out.println(employee);
             System.out.println(employee.getDepartment());
 

@@ -21,10 +21,12 @@ public class Relation2OneToManyBiDirectional {
 
             session.beginTransaction();
 
-            Department department = session.get(Department.class, 2);
+            Department department = session.get(Department.class, 15);
             System.out.println(department);
-            System.out.println(department.getEmployeeList());
 
+            // Force initialization of employeeList
+            System.out.println(department.getEmployeeList().size()); // Accessing the size initializes the list
+            System.out.println(department.getEmployeeList());
             session.getTransaction().commit();
             System.out.println("Done!");
         } finally {

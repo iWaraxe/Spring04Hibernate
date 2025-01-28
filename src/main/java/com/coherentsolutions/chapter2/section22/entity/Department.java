@@ -18,8 +18,10 @@ public class Department {
     private int maxSalary;
     @Column(name = "min_salary")
     private int minSalary;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "department")
-    //@OneToMany(cascade = {CascadeType.PERSIST, CascadeType.DETACH, CascadeType.REFRESH, CascadeType.MERGE}, mappedBy = "department")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "department", fetch = FetchType.EAGER)
+    //@OneToMany(cascade = {CascadeType.PERSIST, CascadeType.DETACH, CascadeType.REFRESH, CascadeType.MERGE},
+    //        mappedBy = "department",
+    //        fetch = FetchType.EAGER)
     private List<Employee> employeeList;
 
 
@@ -36,8 +38,11 @@ public class Department {
         if(employeeList == null) {
             employeeList = new ArrayList<>();
         }
+        System.out.println("Adding employee:" + employee);
         employeeList.add(employee);
-        employee.setDepartment(this); // bidirectional link
+        System.out.println("Employee added to department:" + departmentName + ". employeeList size: " + employeeList.size());
+        employee.setDepartment(this);// bidirectional link
+        System.out.println(employee.getDepartment());
     }
 
     public int getId() {

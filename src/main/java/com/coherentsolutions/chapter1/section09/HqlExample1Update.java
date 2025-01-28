@@ -16,7 +16,7 @@ public class HqlExample1Update {
             Session session = factory.getCurrentSession();
             session.beginTransaction();
 
-            Employee emp = session.get(Employee.class, 31);
+            Employee emp = session.get(Employee.class, 23);
             emp.setSalary(6000);
 
             session.getTransaction().commit();

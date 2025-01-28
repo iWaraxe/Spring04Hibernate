@@ -17,7 +17,7 @@ public class HqlExample2Delete {
             session.beginTransaction();
 
             session.createQuery("DELETE Employee " +
-                    "where name = 'Toya'").executeUpdate(); // update == changes in table: update column values or deletion of rows
+                    "where name = 'James'").executeUpdate(); // update == changes in table: update column values or deletion of rows
 
             session.getTransaction().commit();
             System.out.println("Done!");

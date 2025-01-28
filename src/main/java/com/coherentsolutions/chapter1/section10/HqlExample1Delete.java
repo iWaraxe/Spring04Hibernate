@@ -16,7 +16,7 @@ public class HqlExample1Delete {
             Session session = factory.getCurrentSession();
             session.beginTransaction();
 
-            Employee emp = session.get(Employee.class, 33);
+            Employee emp = session.get(Employee.class, 71);
             session.delete(emp);
 
             session.getTransaction().commit();

@@ -20,7 +20,7 @@ public class Relation3OneToManyUniDirectional {
             session = factory.getCurrentSession();
 
             session.beginTransaction();
-            Department department = session.get(Department.class, 2);
+            Department department = session.get(Department.class, 16);
             session.delete(department);
 
             session.getTransaction().commit();

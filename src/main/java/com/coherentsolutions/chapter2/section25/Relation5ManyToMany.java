@@ -19,7 +19,7 @@ public class Relation5ManyToMany {
         try {
             session = factory.getCurrentSession();
             session.beginTransaction();
-            Section section = session.get(Section.class, 1);
+            Section section = session.get(Section.class, 10);
             session.delete(section);
             session.getTransaction().commit();
             System.out.println("Done!");

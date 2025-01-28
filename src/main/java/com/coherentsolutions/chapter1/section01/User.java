@@ -7,7 +7,6 @@ public class User {//POJO: private fields, default constructor, getters & setter
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
     private String name;
     private String email;
 

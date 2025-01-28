@@ -23,22 +23,31 @@ public class Relation1ManyToMany {
         try {
             session = factory.getCurrentSession();
 
+            // Create Section
             Section section1 = new Section("Dance");
-            for (int i = 0; i < NUMBER_OF_CHILDREN; i++) {
-                section1.addChildToSection(
-                        new Child(
-                                faker.name().firstName(),
-                                faker.number().randomDigitNotZero()
-                        )
-                );
-            }
 
             session.beginTransaction();
+
+            // Add Children to Section
+            for (int i = 0; i < NUMBER_OF_CHILDREN; i++) {
+                Child child = new Child(
+                        faker.name().firstName(),
+                        faker.number().randomDigitNotZero()
+                );
+
+                section1.addChildToSection(child); // Add child to section
+                session.save(child); // Persist each child
+            }
+
+            // Save the Section (Hibernate will manage relationships via cascading)
             session.save(section1);
+
             session.getTransaction().commit();
             System.out.println("Done!");
         } finally {
-            session.close();
+            if (session != null) {
+                session.close();
+            }
             factory.close();
         }
     }

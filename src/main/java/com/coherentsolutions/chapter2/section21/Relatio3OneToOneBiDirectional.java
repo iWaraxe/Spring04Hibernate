@@ -20,7 +20,7 @@ public class Relatio3OneToOneBiDirectional {
             session = factory.getCurrentSession();
 
             session.beginTransaction();
-            Detail detail = session.get(Detail.class, 4);
+            Detail detail = session.get(Detail.class, 10);
             System.out.println(detail.getEmployee());
             session.getTransaction().commit();
 

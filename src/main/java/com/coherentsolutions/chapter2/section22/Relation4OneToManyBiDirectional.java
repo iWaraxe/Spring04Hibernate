@@ -21,7 +21,7 @@ public class Relation4OneToManyBiDirectional {
 
             session.beginTransaction();
 
-            Employee employee = session.get(Employee.class, 1);
+            Employee employee = session.get(Employee.class, 107);
             session.delete(employee);
 
             session.getTransaction().commit();

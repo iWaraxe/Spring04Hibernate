@@ -21,7 +21,7 @@ public class EagerVsLazyLoading03 {
             session.beginTransaction();
 
             System.out.println("Get department");
-            Department department = session.get(Department.class, 3);
+            Department department = session.get(Department.class, 17);
 
             System.out.println("Show department");
             System.out.println(department);

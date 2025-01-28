@@ -20,7 +20,7 @@ public class Relations4OneToOneUnidirectional {
             session = factory.getCurrentSession();
 
             session.beginTransaction();
-            Employee emp = session.get(Employee.class, 66);
+            Employee emp = session.get(Employee.class, 95);
             session.delete(emp);
 
             session.getTransaction().commit();

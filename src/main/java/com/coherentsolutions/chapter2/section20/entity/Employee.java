@@ -18,7 +18,7 @@ public class Employee {
     private String department;
     @Column(name = "salary")
     private int salary;
-    @OneToOne(cascade = CascadeType.ALL) // by default cascade doesn't work
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER) // by default cascade doesn't work
     @JoinColumn(name = "details_id")
     private Detail empDetail;
 

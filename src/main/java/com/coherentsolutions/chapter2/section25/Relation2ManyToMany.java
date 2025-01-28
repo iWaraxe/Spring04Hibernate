@@ -24,21 +24,27 @@ public class Relation2ManyToMany {
         try {
             session = factory.getCurrentSession();
 
+            // Create a Child
             Child child = new Child("Igor", 13);
-            for (int i = 0; i < NUMBER_OF_SECTIONS; i++) {
-                child.addSectionToChild(
-                        new Section(
-                                faker.funnyName().name()
-                        )
-                );
-            }
 
             session.beginTransaction();
+
+            // Create and save Sections
+            for (int i = 0; i < NUMBER_OF_SECTIONS; i++) {
+                Section section = new Section(faker.funnyName().name());
+                session.save(section); // Save each Section
+                child.addSectionToChild(section); // Add Section to Child
+            }
+
+            // Save Child
             session.save(child);
+
             session.getTransaction().commit();
             System.out.println("Done!");
         } finally {
-            session.close();
+            if (session != null) {
+                session.close();
+            }
             factory.close();
         }
     }

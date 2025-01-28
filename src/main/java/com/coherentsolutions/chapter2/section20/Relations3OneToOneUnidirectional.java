@@ -18,7 +18,7 @@ public class Relations3OneToOneUnidirectional {
         try {
 
             session.beginTransaction();
-            Employee emp = session.get(Employee.class, 66);
+            Employee emp = session.get(Employee.class, 102);
 
             System.out.println(emp.getEmpDetail()); // we don't write SQL but rather use cascade
 

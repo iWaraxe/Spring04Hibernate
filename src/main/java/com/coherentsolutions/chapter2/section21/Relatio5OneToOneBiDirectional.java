@@ -21,7 +21,7 @@ public class Relatio5OneToOneBiDirectional {
 
             session.beginTransaction();
 
-            Detail detail = session.get(Detail.class, 9);
+            Detail detail = session.get(Detail.class, 10);
             detail.getEmployee().setEmpDetail(null);
             session.delete(detail);
 

@@ -5,7 +5,7 @@ import com.coherentsolutions.chapter1.entity.Employee;
 public class Main {
     public static void main(String[] args) {
         // Example of using get()
-        Employee employee = DataAccess.getEmployee(7);
+        Employee employee = DataAccess.getEmployee(23);
         if (employee != null) {
             System.out.println("Employee Retrieved using get(): " + employee.getName());
         } else {
@@ -14,7 +14,7 @@ public class Main {
 
         // Example of using load()
         try {
-            Employee loadedEmployee = DataAccess.loadEmployee(1);
+            Employee loadedEmployee = DataAccess.loadEmployee(23);
             System.out.println("Employee Retrieved using load(): " + loadedEmployee.getName());
         } catch (Exception e) {
             System.out.println("No employee found with this ID using load(), or error loading employee");

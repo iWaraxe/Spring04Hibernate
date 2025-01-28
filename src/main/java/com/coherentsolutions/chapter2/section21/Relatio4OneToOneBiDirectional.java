@@ -20,7 +20,7 @@ public class Relatio4OneToOneBiDirectional {
             session = factory.getCurrentSession();
 
             session.beginTransaction();
-            Detail detail = session.get(Detail.class, 4);
+            Detail detail = session.get(Detail.class, 6);
             session.delete(detail);
             session.getTransaction().commit();
 

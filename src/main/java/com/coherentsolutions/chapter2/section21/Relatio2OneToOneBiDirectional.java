@@ -25,7 +25,7 @@ public class Relatio2OneToOneBiDirectional {
             detail.setEmployee(employee);
 
             session.beginTransaction();
-            session.save(detail);
+            session.save(employee);
             session.getTransaction().commit();
 
             System.out.println("Done!");
